@@ -5,6 +5,7 @@ import java.awt.event.*;
 public class App extends JFrame {
 
     private static final String OS_QUESTION_LABEL = "Escoja un sistema operativo: (solo una opción).";
+    private static String firstResponse;
 
     // declare a new container to get the content pain
     Container window = getContentPane();
@@ -15,7 +16,7 @@ public class App extends JFrame {
 
     /* Constructors =============================================== */
     public App(String title, int width, int height) {
-        
+
         // create the window frame
         createWindow(title, width, height);
         JPanel panel = new OsQuestionComponent();
@@ -70,18 +71,11 @@ public class App extends JFrame {
         private class Handler implements ActionListener {
         
             public void actionPerformed(ActionEvent event){
-                if (event.getSource() == firstCheckBoxSelection) {
-                    String cmd = event.getActionCommand();
-                    System.out.println("Here we are" + cmd);
-                }
-                if (event.getSource() == secondCheckBoxSelection) {
-                    String cmd = event.getActionCommand();
-                    System.out.println("Here we are" + cmd);
-                }
-                if (event.getSource() == thirdCheckBoxSelection) {
-                    String cmd = event.getActionCommand();
-                    System.out.println("Here we are" + cmd);
-                }
+                String newValueOs = event.getActionCommand();
+                //This updates to the selected value
+                firstResponse = newValueOs;
+
+                System.out.println("Updated value: " + firstResponse);
             }
         }
     }  
