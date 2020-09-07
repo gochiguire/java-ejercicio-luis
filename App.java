@@ -32,7 +32,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    //Custom components class
+    /* Custom components class ==================================== */
     public class OsQuestionComponent extends JPanel {
 
         JLabel osLabel;
